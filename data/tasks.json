@@ -1,0 +1,18 @@
+[
+  { "id": 1,  "task": "Design landing page mockup",         "category": "Design",      "assignee": "Priya Nair",     "priority": "High",   "due": "2026-10-05", "status": "In Progress" },
+  { "id": 2,  "task": "Set up CI/CD pipeline",               "category": "Development", "assignee": "Rahul Singh",    "priority": "High",   "due": "2026-10-03", "status": "Done" },
+  { "id": 3,  "task": "Write unit tests for auth module",    "category": "Testing",     "assignee": "Ananya Iyer",    "priority": "Medium", "due": "2026-10-08", "status": "To Do" },
+  { "id": 4,  "task": "Draft Q4 social media calendar",      "category": "Marketing",   "assignee": "Karthik Reddy",  "priority": "Low",    "due": "2026-10-10", "status": "To Do" },
+  { "id": 5,  "task": "Fix checkout page layout bug",        "category": "Development", "assignee": "Rahul Singh",    "priority": "High",   "due": "2026-09-28", "status": "Overdue" },
+  { "id": 6,  "task": "Create icon set for dashboard",       "category": "Design",      "assignee": "Priya Nair",     "priority": "Medium", "due": "2026-10-06", "status": "In Progress" },
+  { "id": 7,  "task": "Run accessibility audit on homepage", "category": "Testing",     "assignee": "Ananya Iyer",    "priority": "High",   "due": "2026-10-02", "status": "Done" },
+  { "id": 8,  "task": "Plan influencer outreach",            "category": "Marketing",   "assignee": "Karthik Reddy",  "priority": "Medium", "due": "2026-10-12", "status": "To Do" },
+  { "id": 9,  "task": "Refactor API error handling",         "category": "Development", "assignee": "Meera Pillai",   "priority": "Medium", "due": "2026-09-30", "status": "Overdue" },
+  { "id": 10, "task": "User interview synthesis",            "category": "Design",      "assignee": "Priya Nair",     "priority": "Low",    "due": "2026-10-09", "status": "In Progress" },
+  { "id": 11, "task": "Load testing for API endpoints",      "category": "Testing",     "assignee": "Meera Pillai",   "priority": "High",   "due": "2026-10-04", "status": "To Do" },
+  { "id": 12, "task": "Write release notes for v2.3",        "category": "Marketing",   "assignee": "Karthik Reddy",  "priority": "Low",    "due": "2026-10-01", "status": "Done" },
+  { "id": 13, "task": "Implement dark mode toggle",          "category": "Development", "assignee": "Rahul Singh",    "priority": "Medium", "due": "2026-10-11", "status": "To Do" },
+  { "id": 14, "task": "Redesign empty states",                "category": "Design",      "assignee": "Meera Pillai",   "priority": "Low",    "due": "2026-10-07", "status": "In Progress" },
+  { "id": 15, "task": "Regression test suite update",        "category": "Testing",     "assignee": "Ananya Iyer",    "priority": "Medium", "due": "2026-09-29", "status": "Overdue" },
+  { "id": 16, "task": "Email campaign A/B test review",      "category": "Marketing",   "assignee": "Karthik Reddy",  "priority": "Medium", "due": "2026-10-13", "status": "In Progress" }
+]

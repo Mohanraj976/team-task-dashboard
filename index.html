@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Team Task Dashboard</title>
+
+  <!-- PERFORMANCE: no external libraries (no chart library, no CSS framework) —
+       the bar chart is drawn as lightweight inline SVG by vanilla JS, and the
+       whole app ships as one small minified CSS file and one small minified
+       JS file. System fonts only, zero third-party network requests. -->
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <h1>Team Task Dashboard</h1>
+    <p class="subtitle">A live view of what the team is working on</p>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Summary / KPI cards -->
+    <section class="summary" aria-label="Task summary">
+      <div class="kpi-card">
+        <span class="kpi-value" id="kpi-total">–</span>
+        <span class="kpi-label">Total Tasks</span>
+      </div>
+      <div class="kpi-card kpi-done">
+        <span class="kpi-value" id="kpi-done">–</span>
+        <span class="kpi-label">Done</span>
+      </div>
+      <div class="kpi-card kpi-progress">
+        <span class="kpi-value" id="kpi-progress">–</span>
+        <span class="kpi-label">In Progress</span>
+      </div>
+      <div class="kpi-card kpi-overdue">
+        <span class="kpi-value" id="kpi-overdue">–</span>
+        <span class="kpi-label">Overdue</span>
+      </div>
+    </section>
+
+    <div class="dashboard-grid">
+
+      <!-- Chart -->
+      <section class="panel chart-panel" aria-labelledby="chart-heading">
+        <h2 id="chart-heading">Tasks by Category</h2>
+        <div id="chart-container" aria-hidden="false">
+          <!-- SVG bar chart injected here by JS. role="img" + aria-label
+               give a one-line summary for screen readers; the sortable
+               table below provides the full, navigable data equivalent. -->
+        </div>
+      </section>
+
+      <!-- Filters -->
+      <section class="panel filter-panel" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">Filter Tasks</h2>
+        <form id="filter-form">
+          <div class="field">
+            <label for="search-input">Search</label>
+            <input type="search" id="search-input" placeholder="Task or assignee…" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="status-select">Status</label>
+            <select id="status-select">
+              <option value="all">All statuses</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+              <option value="Overdue">Overdue</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="category-select">Category</label>
+            <select id="category-select">
+              <option value="all">All categories</option>
+              <option value="Design">Design</option>
+              <option value="Development">Development</option>
+              <option value="Testing">Testing</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+          <button type="button" id="reset-filters" class="btn-secondary">Reset filters</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Live region: announces result count to screen reader users after
+         every filter/sort action, without moving visual focus. -->
+    <p id="result-announcer" class="visually-hidden" role="status" aria-live="polite"></p>
+
+    <!-- Data table -->
+    <section class="panel table-panel" aria-labelledby="table-heading">
+      <h2 id="table-heading">All Tasks</h2>
+      <div class="table-scroll">
+        <table id="task-table">
+          <caption class="visually-hidden">
+            Team tasks, sortable by column. Showing tasks matching the current filters.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="none"><button type="button" class="sort-btn" data-key="task">Task</button></th>
+              <th scope="col" aria-sort="none"><button type="button" class="sort-btn" data-key="category">Category</button></th>
+              <th scope="col" aria-sort="none"><button type="button" class="sort-btn" data-key="assignee">Assignee</button></th>
+              <th scope="col" aria-sort="none"><button type="button" class="sort-btn" data-key="priority">Priority</button></th>
+              <th scope="col" aria-sort="none"><button type="button" class="sort-btn" data-key="due">Due Date</button></th>
+              <th scope="col" aria-sort="none"><button type="button" class="sort-btn" data-key="status">Status</button></th>
+            </tr>
+          </thead>
+          <tbody id="task-table-body">
+            <!-- rows rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+      <p id="empty-state" class="empty-state" hidden>No tasks match the current filters.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Week 5 Capstone — Team Task Dashboard. Data is static sample data for demonstration.</p>
+  </footer>
+
+  <!-- PERFORMANCE: script deferred, loaded last, never blocks first paint -->
+  <script src="js/app.min.js" defer></script>
+</body>
+</html>
